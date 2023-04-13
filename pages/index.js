@@ -45,8 +45,11 @@ const IndexPage = () => {
       ) : (
         <>
           <Box sx={{ textAlign: "right", mt: 4 }}>
-          <Button variant="contained" href="/products">
+          <Button variant="contained" sx={{mr: 4}} href="/products">
               View All Products
+          </Button>
+          <Button variant="contained" href="/products/add">
+              Add Product
           </Button>
           </Box>
           <Box sx={{ mt: 2, textAlign: "center", marginBottom: "1rem" }}>
