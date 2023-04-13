@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Button, Box, Typography, Paper } from "@mui/material";
+import { Grid, Button, Box, Typography, Paper, ButtonGroup } from "@mui/material";
 import Carousel from "../components/Carousel";
 
 const IndexPage = () => {
@@ -44,13 +44,19 @@ const IndexPage = () => {
         <div>Loading...</div>
       ) : (
         <>
-          <Box sx={{ textAlign: "right", mt: 4 }}>
-          <Button variant="contained" sx={{mr: 4}} href="/products">
-              View All Products
-          </Button>
-          <Button variant="contained" href="/products/add">
-              Add Product
-          </Button>
+          <Box sx={{ mb: 4 }}>
+            <Grid container spacing={2} justifyContent="flex-end">
+              <Grid item xs={6} md={3}>
+                <Button variant="contained" fullWidth href="/products">
+                  View All Products
+                </Button>
+              </Grid>
+              <Grid item xs={6} md={3}>
+                <Button variant="contained" fullWidth href="/products/add">
+                  Add Product
+                </Button>
+              </Grid>
+            </Grid>
           </Box>
           <Box sx={{ mt: 2, textAlign: "center", marginBottom: "1rem" }}>
             <Typography variant="h4" component="h1" fontWeight="bold">
