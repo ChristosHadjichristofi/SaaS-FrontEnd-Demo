@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Card, CardMedia, CardContent, Typography, Link, TableContainer, Table, TableHead, TableRow, TableBody, TableCell, Button } from "@mui/material";
+import { Grid, Card, CardMedia, CardContent, Typography, TableContainer, Table, TableHead, TableRow, TableBody, TableCell, Button } from "@mui/material";
+
+import Link from "next/link";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -43,7 +45,7 @@ const ProductsPage = () => {
       <Grid container spacing={2}>
         {products.map((product) => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>
-            <Link href={`/products/${product.id}`} underline="none">
+            <Link href={`/products/${product.id}`} underline="none" style={{ textDecoration: "none" }}>
               <Card sx={{ height: "100%" }}>
                 <CardMedia
                   component="img"

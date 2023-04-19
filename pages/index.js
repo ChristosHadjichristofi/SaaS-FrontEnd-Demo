@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Grid, Button, Box, Typography, Paper, ButtonGroup } from "@mui/material";
 import Carousel from "../components/Carousel";
 
+import Link from "next/link";
+
 const IndexPage = () => {
   const [hotProducts, setHotProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -47,14 +49,18 @@ const IndexPage = () => {
           <Box sx={{ mb: 4 }}>
             <Grid container spacing={2} justifyContent="flex-end">
               <Grid item xs={6} md={3}>
-                <Button variant="contained" fullWidth href="/products">
+              <Link href="/products">
+                <Button variant="contained" fullWidth>
                   View All Products
                 </Button>
+              </Link>
               </Grid>
               <Grid item xs={6} md={3}>
-                <Button variant="contained" fullWidth href="/products/add">
-                  Add Product
-                </Button>
+                <Link href="/products/add">
+                  <Button variant="contained" fullWidth>
+                    Add Product
+                  </Button>
+                </Link>
               </Grid>
             </Grid>
           </Box>
@@ -84,23 +90,24 @@ const IndexPage = () => {
             <Grid container spacing={2}>
               {categories.map((category) => (
                 <Grid item xs={12} sm={6} md={3} key={category}>
-                  <Paper
-                    component="div"
-                    sx={{
-                      p: 2,
-                      textAlign: "center",
-                      cursor: "pointer",
-                      ":hover": {
-                        backgroundColor: "#f5f5f5",
-                      },
-                    }}
-                    onClick={() => handleCategoryClick(category)}
-                  >
-                    <Typography variant="subtitle1" component="span">
-                      {category}
-                    </Typography>
-                  </Paper>
-                </Grid>
+                  <Link href={`/products/category/${category}`} underline="none" style={{ textDecoration: "none"}}>
+                    <Paper
+                      component="div"
+                      sx={{
+                        p: 2,
+                        textAlign: "center",
+                        cursor: "pointer",
+                        ":hover": {
+                          backgroundColor: "#f5f5f5",
+                        },
+                      }}
+                    >
+                      <Typography variant="subtitle1" component="span">
+                        {category}
+                      </Typography>
+                    </Paper>
+                  </Link>
+              </Grid>              
               ))}
             </Grid>
           </Paper>
