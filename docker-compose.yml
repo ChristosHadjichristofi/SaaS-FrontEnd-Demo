@@ -1,0 +1,9 @@
+version: "2"
+services:
+  saasdemo:
+    container_name: saasdemo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
