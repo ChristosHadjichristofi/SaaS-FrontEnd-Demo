@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/saas-frontend-demo',
-  assetPrefix: '/saas-frontend-demo',
+  // basePath: '/saas-frontend-demo',
+  // assetPrefix: '/saas-frontend-demo',
   reactStrictMode: true,
 }
 
