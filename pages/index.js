@@ -36,10 +36,6 @@ const IndexPage = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  const handleCategoryClick = (category) => {
-    window.location.href = `/products/category/${category}`;
-  };
-
   return (
     <>
       {loading ? (
@@ -59,6 +55,13 @@ const IndexPage = () => {
                 <Link href="/products/add">
                   <Button variant="contained" fullWidth>
                     Add Product
+                  </Button>
+                </Link>
+              </Grid>
+              <Grid item xs={6} md={3}>
+                <Link href="/analytics">
+                  <Button variant="contained" fullWidth>
+                    Analytics
                   </Button>
                 </Link>
               </Grid>
